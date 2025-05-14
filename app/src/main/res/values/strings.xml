@@ -3,4 +3,13 @@
     <string name="newsContent">All news</string>
     <string name="RVImageDescription">News Image</string>
     <string name="dummyText">words are words even if the words don\'t word, word by word -said by Mark Mwema</string>
+    <string name="business">business</string>
+    <string name="entertainment">entertainment</string>
+    <string name="general">general</string>
+    <string name="health">health</string>
+    <string name="science">science</string>
+    <string name="sports">sports</string>
+    <string name="technology">technology</string>
+    <string name="search_here">Search here</string>
+    <string name="news_details_image">News Details Image</string>
 </resources>

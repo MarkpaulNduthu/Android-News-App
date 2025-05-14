@@ -61,7 +61,8 @@
                 android:layout_width="110dp"
                 android:layout_height="160dp"
                 android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerCrop"
+                android:src="@drawable/no_image"
                 android:layout_alignParentEnd="true"
                 android:contentDescription="@string/RVImageDescription"/>
         </RelativeLayout>

@@ -1,6 +1,8 @@
 package com.mwema.myapplication.RetrofitAPI;
 
 
+import androidx.annotation.NonNull;
+
 import com.mwema.myapplication.Models.NewsApiResponseModel;
 
 import retrofit2.Call;
@@ -11,6 +13,7 @@ public interface NewsAPI {
     @GET("top-headlines")
     Call<NewsApiResponseModel> getNews(
             @Query("country") String countryCode,
-            @Query("apiKey")String apiKey
+            @Query("apiKey")String apiKey,
+            @Query("q") String query
     );
 }

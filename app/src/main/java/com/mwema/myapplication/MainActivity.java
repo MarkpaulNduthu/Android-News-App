@@ -1,6 +1,7 @@
 package com.mwema.myapplication;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -18,6 +19,7 @@ import com.mwema.myapplication.ViewModels.NewsAdapter;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    Button btn1,btn2,btn3,btn4,btn5,btn6,btn7;
     RecyclerView news;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +32,48 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         news = findViewById(R.id.newsContent);
+        btn1 = findViewById(R.id.btn1);
+        btn2 = findViewById(R.id.btn2);
+        btn3 = findViewById(R.id.btn3);
+        btn4 = findViewById(R.id.btn4);
+        btn5 = findViewById(R.id.btn5);
+        btn6 = findViewById(R.id.btn6);
+        btn7 = findViewById(R.id.btn7);
         news.setLayoutManager(new LinearLayoutManager(this));
-        fetchNews();
+        btn1.setOnClickListener(view -> {
+            String value = (String) btn1.getText();
+            fetchNews(value);
+        });
+        btn2.setOnClickListener(view -> {
+            String value = (String) btn2.getText();
+            fetchNews(value);
+        });
+        btn3.setOnClickListener(view -> {
+            String value = (String) btn3.getText();
+            fetchNews(value);
+        });
+        btn4.setOnClickListener(view -> {
+            String value = (String) btn4.getText();
+            fetchNews(value);
+        });
+        btn5.setOnClickListener(view -> {
+            String value = (String) btn5.getText();
+            fetchNews(value);
+        });
+        btn6.setOnClickListener(view -> {
+            String value = (String) btn6.getText();
+            fetchNews(value);
+        });
+        btn7.setOnClickListener(view -> {
+            String value = (String) btn7.getText();
+            fetchNews(value);
+        });
+
+        fetchNews(null);
     }
-    private void fetchNews(){
+    private void fetchNews(String query){
         new Thread(()->{
-            List<Articles> articlesList = RetrofitInstance.getTopHeadlines("us");
+            List<Articles> articlesList = RetrofitInstance.getTopHeadlines("us",query);
 
             runOnUiThread(()->{
                 if(articlesList != null){

@@ -14,7 +14,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstance {
-    private final static String apiKey = "YOUR_APIKEY";
+    private final static String apiKey = "Your_ApiKey";
     static Retrofit retrofit = null;
     static String TAG = "something";
 
@@ -28,10 +28,10 @@ public class RetrofitInstance {
         return retrofit;
     }
 
-    public static List<Articles> getTopHeadlines(String country) {
+    public static List<Articles> getTopHeadlines(String country,String query) {
         retrofit = RetrofitInstance.get();
         NewsAPI service = retrofit.create(NewsAPI.class);
-        Call<NewsApiResponseModel> NewsResponse = service.getNews(country, apiKey);
+        Call<NewsApiResponseModel> NewsResponse = service.getNews(country, apiKey,query);
         try {
             Response<NewsApiResponseModel> answer = NewsResponse.execute();
             if (answer.isSuccessful() && answer.body() != null) {
